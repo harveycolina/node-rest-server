@@ -1,3 +1,4 @@
+
 const mongoose= require('mongoose')
 
 console.log('base de datos en linea');
@@ -6,7 +7,7 @@ console.log('base de datos en linea');
 const dbConnection = async ()=>{
 try {
     
-    await mongoose.connect(process.env.HC_CNN, {
+    mongoose.connect(process.env.HC_CNN, {
   
         
         
