@@ -15,12 +15,12 @@
     "to": "^0.2.9",
     "upgrade": "^1.1.0",
     "uuid": "^8.3.2"
-  },
+      },
   "devDependencies": {},
   "scripts": {
     "start": "node app"
-  },
+      },
   "keywords": [],
   "author": "",
   "license": "ISC"
-}
+    }
