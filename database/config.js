@@ -1,4 +1,5 @@
 
+const { response } = require('express');
 const mongoose= require('mongoose')
 
 console.log('base de datos en linea');
@@ -15,7 +16,9 @@ try {
     })
   
 } catch (error) {
-    throw new Error('error', error);
+    resp.json(error).status("400")
+    
+    next();
     
     }
 }
