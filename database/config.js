@@ -3,9 +3,7 @@ const mongoose= require('mongoose')
 
 console.log('base de datos en linea');
 
-function UserException(message) {
-    this.message = message;
-    this.name = 'UserException';}
+
     
 const dbConnection = async ()=>{
 try {
@@ -17,7 +15,7 @@ try {
     })
   
 } catch (error) {
-    throw new UserException('error', error);
+    throw new Error('error', error);
     
     }
 }
