@@ -22,8 +22,8 @@ class Server {
         this.routes();
     }
 
-     conectarDB() {
-         dbConnection();
+     async conectarDB() {
+        await dbConnection();
     }
 
 
