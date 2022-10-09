@@ -16,7 +16,7 @@ try {
     })
   
 } catch (error) {
-    res.json(error).status("400")
+    response.json(error).status("400")
     
     next();
     
