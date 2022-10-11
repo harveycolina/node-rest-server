@@ -6,21 +6,18 @@ console.log('base de datos en linea');
 
 
     
-const dbConnection = async ()=>{
+const dbConnection = async (err, req, res, next)=>{
 const conect = mongoose.connect(process.env.HC_CNN)
-function conect(err, req, res, next) {
-    if (res.headersSent) {
+
+    if (res.conect) {
+        conect
       return next(err);
     }
     res.status(500);
     res.render('error', { error: err });
   }
  
-// try {
-//     conect
-// } catch (error) {
-//     next(error)
-// }
+
 
 
 
@@ -28,7 +25,7 @@ function conect(err, req, res, next) {
         
         
 
-}
+
 module.exports={
     dbConnection
 }
