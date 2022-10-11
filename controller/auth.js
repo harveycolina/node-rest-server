@@ -4,7 +4,7 @@ const Usuario = require('../models/usuario');
 const {generarJWT}= require('../helpers/generar-jwt');
 
 
-const login = async(req, res= response)=>{
+const login = async(err,req, res= response,next)=>{
 
 const {correo, password}= req.body;
 
@@ -24,6 +24,7 @@ if (!usuario.estado){
        return  res.status(400).json({
             msg:'password no son correctos- password '
     });
+    
     }
 //generar web token 
 const token = await generarJWT(usuario.id);
@@ -33,7 +34,7 @@ const token = await generarJWT(usuario.id);
         usuario,
         token
     })
-
+    next(err)
 } catch (error) {
     console.log(error)
      res.status(500).json({
