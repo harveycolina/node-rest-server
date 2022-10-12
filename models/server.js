@@ -49,12 +49,11 @@ class Server {
             console.log('Servidor corriendo en puerto', this.port );
         });
     }
+
+    
 }
 
-process.on("unhandleRejection",err =>{
-    console.log('send this to error tracking', $(err.stack) );
 
-});
 
 
 

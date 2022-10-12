@@ -6,15 +6,17 @@ console.log('base de datos en linea');
 
 
     
-const dbConnection = async (err, req, res, next)=>{
+const dbConnection = async (req, res, next)=>{
     
-    if (mongoose.connect(process.env.HC_CNN)) {
-        
-        mongoose.connect(process.env.HC_CNN)
-      return next(err);
-    }
-    res.status(500);
-    res.render('error', { error: err });
+ try {
+  
+   mongoose.connect(process.env.HC_CNN)
+ } catch (error) {
+  throw new Error(error);
+  next()
+ }
+ 
+ 
   }
  
 
